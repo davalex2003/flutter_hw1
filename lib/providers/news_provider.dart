@@ -16,15 +16,7 @@ class NewsProvider {
     if (jsonData['status'] == "ok") {
       jsonData["articles"].forEach((element) {
         if (element['urlToImage'] != null && element['description'] != null) {
-          News news = News(
-            title: element['title'],
-            author: element['author'],
-            description: element['description'],
-            urlToImage: element['urlToImage'],
-            publishedAt: DateTime.parse(element['publishedAt']),
-            content: element["content"],
-            articleUrl: element["url"],
-          );
+          News news = News.fromJson(element);
           allNews.add(news);
         }
       });

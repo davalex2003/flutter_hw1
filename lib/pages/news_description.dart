@@ -66,7 +66,7 @@ class NewsDescriptionPage extends StatelessWidget {
               const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
-                  _launchURL(news.articleUrl);
+                  _launchURL(news.url);
                 },
                 child: const Text(
                   "Перейти к новости",

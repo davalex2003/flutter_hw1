@@ -10,7 +10,7 @@ class News {
   String urlToImage;
   DateTime publishedAt;
   String content;
-  String articleUrl;
+  String url;
 
   News({
     required this.title,
@@ -19,7 +19,7 @@ class News {
     required this.urlToImage,
     required this.publishedAt,
     required this.content,
-    required this.articleUrl,
+    required this.url,
   });
 
   factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
