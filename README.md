@@ -1,16 +1,15 @@
 # hw1
 
-A new Flutter project.
+Новостное приложение
 
-## Getting Started
+## Описание
 
-This project is a starting point for a Flutter application.
+Реализован основной и дополнительный экраны
 
-A few resources to get you started if this is your first Flutter project:
+Для получения данных использована библиотека http
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Линтер подключен
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Реализована интернационализация 
+
+Прикреплён apk
