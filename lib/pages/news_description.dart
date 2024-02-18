@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/news.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:hw1/providers/themes_provider.dart';
+import 'package:News/providers/themes_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsDescriptionPage extends StatelessWidget {

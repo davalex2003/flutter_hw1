@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hw1/pages/home.dart';
-import 'package:hw1/providers/themes_provider.dart';
+import 'package:News/pages/home.dart';
+import 'package:News/providers/themes_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hw1/l10n/all_locales.dart';
-import 'package:hw1/l10n/locale_provider.dart';
+import 'package:News/l10n/all_locales.dart';
+import 'package:News/l10n/locale_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

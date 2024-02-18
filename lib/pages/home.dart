@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hw1/l10n/locale_provider.dart';
+import 'package:News/l10n/locale_provider.dart';
 import 'package:provider/provider.dart';
 import '../l10n/all_locales.dart';
 import '../providers/news_provider.dart';
 import '../models/news.dart';
 import 'news_description.dart';
-import 'package:hw1/providers/themes_provider.dart';
+import 'package:News/providers/themes_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {

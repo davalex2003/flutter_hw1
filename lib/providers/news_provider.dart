@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:hw1/models/news.dart';
+import 'package:News/models/news.dart';
 import 'dart:convert';
 
 class NewsProvider {
