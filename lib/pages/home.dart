@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hw1/l10n/locale_provider.dart';
+import 'package:provider/provider.dart';
+import '../l10n/all_locales.dart';
 import '../providers/news_provider.dart';
 import '../models/news.dart';
 import 'news_description.dart';
 import 'package:hw1/providers/themes_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -39,26 +43,53 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         appBar: AppBar(
           actions: <Widget>[
-            IconButton(
-              onPressed: () {
-                final newMode = !_isDark;
-                setState(() {
-                  _isDark = newMode;
-                  _currentThemeMode = _currentThemeMode == ThemeMode.light
-                      ? ThemeMode.dark
-                      : ThemeMode.light;
-                });
-              },
-              icon: Icon(
-                _isDark ? Icons.sunny : Icons.nightlight_round,
+            Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: InkResponse(
+                child: Text(Provider.of<LocaleProvider>(context, listen: false)
+                    .locale
+                    .languageCode
+                    .toUpperCase()),
+                onTap: () {
+                  if (Provider.of<LocaleProvider>(context, listen: false)
+                          .locale
+                          .languageCode
+                          .toUpperCase() ==
+                      "EN") {
+                    Provider.of<LocaleProvider>(context, listen: false)
+                        .setLocale(AllLocale.all[0]);
+                  } else {
+                    Provider.of<LocaleProvider>(context, listen: false)
+                        .setLocale(AllLocale.all[1]);
+                  }
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: IconButton(
+                onPressed: () {
+                  final newMode = !_isDark;
+                  setState(() {
+                    _isDark = newMode;
+                    _currentThemeMode = _currentThemeMode == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+                  });
+                },
+                icon: Icon(
+                  _isDark ? Icons.sunny : Icons.nightlight_round,
+                ),
               ),
             ),
           ],
-          title: const Row(
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Text("Davidenko", style: (TextStyle(color: Colors.red))),
-              Text("News", style: (TextStyle(color: Colors.amberAccent)))
+              Text(AppLocalizations.of(context)!.title_1,
+                  style: (const TextStyle(color: Colors.red))),
+              Text(AppLocalizations.of(context)!.title_2,
+                  style: (const TextStyle(color: Colors.amberAccent)))
             ],
           ),
           centerTitle: true,

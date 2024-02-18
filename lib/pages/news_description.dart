@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/news.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:hw1/providers/themes_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsDescriptionPage extends StatelessWidget {
   final News news;
@@ -17,11 +18,13 @@ class NewsDescriptionPage extends StatelessWidget {
       data: currentThemeMode == ThemeMode.light ? lightTheme : darkTheme,
       child: Scaffold(
         appBar: AppBar(
-          title: const Row(
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Text("Davidenko", style: (TextStyle(color: Colors.red))),
-              Text("News", style: (TextStyle(color: Colors.amberAccent)))
+              Text(AppLocalizations.of(context)!.title_1,
+                  style: (const TextStyle(color: Colors.red))),
+              Text(AppLocalizations.of(context)!.title_2,
+                  style: (const TextStyle(color: Colors.amberAccent)))
             ],
           ),
         ),
@@ -68,9 +71,9 @@ class NewsDescriptionPage extends StatelessWidget {
                 onTap: () {
                   _launchURL(news.url);
                 },
-                child: const Text(
-                  "Перейти к новости",
-                  style: TextStyle(fontSize: 16, color: Colors.blue),
+                child: Text(
+                  AppLocalizations.of(context)!.open_article,
+                  style: const TextStyle(fontSize: 16, color: Colors.blue),
                 ),
               ),
             ],
